@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "78f7d05d-4d4d-4006-8ec0-ce14c49385db",
+		"name": "Briskcovey Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"master@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/masterlogin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"masterlogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Users",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Indra\",\r\n    \"email\": \"indra@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NTIwMywianRpIjoiYmJmMmVhYzItMDBiNi00Yjk1LTliOGEtZDNkN2NlNjUzMWIzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjUyMDMsImNzcmYiOiI1ZmIxY2YyMy04NzJhLTQ1ZGItYmQzOC04ODQyY2RlYzI0OTYiLCJleHAiOjE3NDc3Njg4MDN9.htGfwAP_cvfQ5J_UWVBIPXdFcU_gDBWAPKSlG7yYHwA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/users/:user_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test_2\",\r\n    \"description\": \"testing project\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/projects",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/projects",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"projects"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Project By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/projects/:project_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"projects",
+						":project_id"
+					],
+					"variable": [
+						{
+							"key": "project_id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all task in Project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/projects/:project_id/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"projects",
+						":project_id",
+						"tasks"
+					],
+					"variable": [
+						{
+							"key": "project_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"proect_id\": 1,\r\n    \"title\": \"Parent Task test 1\",\r\n    \"status\": \"pending\",\r\n    \"user_id\": 1,\r\n    \"dependencies\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/tasks/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Task By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/tasks/:task_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						":task_id"
+					],
+					"variable": [
+						{
+							"key": "task_id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Task By User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/tasks/user/:user_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"user",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Task By Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/tasks/status/:status_value",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"status",
+						":status_value"
+					],
+					"variable": [
+						{
+							"key": "status_value",
+							"value": "pending"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"completed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/tasks/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
