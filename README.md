@@ -20,7 +20,7 @@
    pip install -r requirements.txt
    ```
 6. Create PostgreSQL DB named `briskcoveyAssignment`
-7. Set environment variables:
+7. Set environment variables in Config file:
    - `DATABASE_URL=postgresql://postgres:password@localhost/briskcoveyAssignment`
 8. Run the server:
    ```bash
