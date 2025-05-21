@@ -173,16 +173,6 @@ def list_tasks_by_status(status):
     tasks = Task.query.filter_by(status=status).all()
     return jsonify([{ "id": t.id, "title": t.title } for t in tasks])
 
-# def check_circular_dependency(task, dependency):
-#     visited = set()
-#     def dfs(current):
-#         if current.id in visited:
-#             return False
-#         visited.add(current.id)
-#         if current.id == task.id:
-#             return True
-#         return any(dfs(dep) for dep in current.dependencies)
-#     return dfs(dependency)
 
 def check_circular_dependency(task, dependency):
     """
