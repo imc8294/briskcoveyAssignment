@@ -20,9 +20,13 @@
    pip install -r requirements.txt
    ```
 6. Create PostgreSQL DB named `briskcoveyAssignment`
-7. Set environment variables:
+7. Set environment variables in config file:
    - `DATABASE_URL=postgresql://postgres:password@localhost/briskcoveyAssignment`
-8. Run the server:
+8. Run Seed script
+   ```bash
+   python seed.py
+   ```
+9. Run the server:
    ```bash
    python run.py
    ```

@@ -317,7 +317,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"proect_id\": 1,\r\n    \"title\": \"Parent Task test 1\",\r\n    \"status\": \"pending\",\r\n    \"user_id\": 1,\r\n    \"dependencies\": []\r\n}",
+					"raw": "{\r\n    \"proect_id\": 2,\r\n    \"title\": \"Parent Task test 1\",\r\n    \"status\": \"pending\",\r\n    \"user_id\": 2,\r\n    \"dependencies\": []\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -350,7 +350,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0NzgwMDczOSwianRpIjoiN2NhNjJkMjMtNWE1Mi00NzkxLThlOWYtMDVlZTI5YmRkOGMzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc4MDA3MzksImNzcmYiOiI0NDE2N2FiZC0yZWIwLTRjYmEtOGVjZC1hMWUzMTU4ZDgyNmIiLCJleHAiOjE3NDc4MDQzMzl9.G8kjL-uXmZ4VUoXjxEfhSaaAgrrvvf6SIDew74xBdyo",
 							"type": "string"
 						}
 					]
@@ -494,14 +494,14 @@
 			"response": []
 		},
 		{
-			"name": "Update Task",
+			"name": "Update Task Status",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0Nzc2NjA0MSwianRpIjoiM2NiNmZhOTAtMjczYS00YWUwLWE0NWMtMmRmZDM1OTMxYmUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc3NjYwNDEsImNzcmYiOiI2NTZmYTMxZC05OTc0LTQ4OTctOTFiYi00MzY0MTI3YWRhYjUiLCJleHAiOjE3NDc3Njk2NDF9.vYPuOU49zt5rgoeXY9vw1HWk_w6vJjO-qqb9n8ncesQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0NzgwMDczOSwianRpIjoiN2NhNjJkMjMtNWE1Mi00NzkxLThlOWYtMDVlZTI5YmRkOGMzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc4MDA3MzksImNzcmYiOiI0NDE2N2FiZC0yZWIwLTRjYmEtOGVjZC1hMWUzMTU4ZDgyNmIiLCJleHAiOjE3NDc4MDQzMzl9.G8kjL-uXmZ4VUoXjxEfhSaaAgrrvvf6SIDew74xBdyo",
 							"type": "string"
 						}
 					]
@@ -518,7 +518,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/tasks/5",
+					"raw": "http://127.0.0.1:5000/tasks/update_status/5",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -529,7 +529,57 @@
 					"port": "5000",
 					"path": [
 						"tasks",
+						"update_status",
 						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task Dependency",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0NzgwMDczOSwianRpIjoiN2NhNjJkMjMtNWE1Mi00NzkxLThlOWYtMDVlZTI5YmRkOGMzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hc3RlckBnbWFpbC5jb20iLCJuYmYiOjE3NDc4MDA3MzksImNzcmYiOiI0NDE2N2FiZC0yZWIwLTRjYmEtOGVjZC1hMWUzMTU4ZDgyNmIiLCJleHAiOjE3NDc4MDQzMzl9.G8kjL-uXmZ4VUoXjxEfhSaaAgrrvvf6SIDew74xBdyo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dependencies\": [6]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/tasks/update_dependency/:task_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"update_dependency",
+						":task_id"
+					],
+					"variable": [
+						{
+							"key": "task_id",
+							"value": "2"
+						}
 					]
 				}
 			},
