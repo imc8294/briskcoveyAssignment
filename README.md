@@ -3,6 +3,7 @@
 ## Setup Instructions
 
 1. Install Python 3.12
+
 2. Install Virtualenv library
    ```bash
    pip install virtualenv
@@ -20,8 +21,10 @@
    pip install -r requirements.txt
    ```
 6. Create PostgreSQL DB named `briskcoveyAssignment`
-7. Set environment variables in config file:
+
+7. Set environment variables in Config file:
    - `DATABASE_URL=postgresql://postgres:password@localhost/briskcoveyAssignment`
+
 8. Run Seed script
    ```bash
    python seed.py
